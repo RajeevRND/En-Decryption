@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    int i, x;
+    char text[100];
+    bool isTrue = true;
+
+    cout<< "Please enter part to be encrypted: ";
+    cin>> text;
+
+
+    while (isTrue== true){
+
+        cout<<"\nPlease select required operation:\n";
+        cout<<"Please select 1 for encryption."<<endl;
+        cout<<"Please select 2 for decryption."<<endl;
+        cout<<"Press 3 to Exit the program."<<endl;
+        cin>>x;
+
+        switch(x){
+            case 1:
+                for(i = 0; (i < 100 && text[i] != '\0'); i++) text[i] = text[i] + 2;
+                cout << "\nEncrypted string: " << text << endl;
+                break;
+
+            case 2:
+                for(i = 0; (i < 100 && text[i] != '\0'); i++)
+                text[i] = text[i] - 2;
+                cout << "\nDecrypted string: " << text << endl;
+                break;
+
+            default:
+                cout << "\nInvalid Input !!!\n";
+            case 3:
+                cout<<"Exiting program...";
+                isTrue=false;
+                break;
+    }
+
+    }
+}
